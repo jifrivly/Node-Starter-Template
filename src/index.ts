@@ -1,6 +1,7 @@
 import { app } from './app';
 import dotenv from 'dotenv';
 
+import { Logger } from './utils';
 // import './config/config';  // Load configuration files
 
 //For env File 
@@ -11,5 +12,5 @@ const port = process.env.PORT || 3000;
 // Bootstrap other modules if needed
 
 app.listen(port, () => {
-    console.log(`Server is Fire at http://localhost:${port}`);
+    Logger.info(`Server is Fire at http://localhost:${port}`);
 });

@@ -3,6 +3,7 @@ import helmet from 'helmet';
 import cors from 'cors';
 import compression from 'compression';
 import bodyParser from 'body-parser';
+import { logRequestsMiddleware } from './middlewares';
 
 const app: Application = express();
 
@@ -18,6 +19,7 @@ app.use(helmet());  // Security headers
 app.use(compression());  // Compression
 app.use(bodyParser.json());  // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: false }));  // Parse URL-encoded request bodies
+app.use(logRequestsMiddleware);
 
 app.get('/', (req: Request, res: Response) => {
     res.send('Welcome to Express & TypeScript Server');
