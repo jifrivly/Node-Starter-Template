@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 import { Logger } from './utils';
 // import './config/config';  // Load configuration files
 
-//For env File 
+// For env File
 dotenv.config();
 
 const port = process.env.PORT || 3000;

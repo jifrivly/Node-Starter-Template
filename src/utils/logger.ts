@@ -1,15 +1,15 @@
 import { createLogger, format, transports } from 'winston';
 
-const {combine, timestamp, colorize, uncolorize, splat, printf} = format;
+const { combine, timestamp, colorize, uncolorize, splat, printf } = format;
 
-const enumerateErrorFormat = format((info) => {
+const enumerateErrorFormat = format(info => {
     if (info instanceof Error) {
-        Object.assign(info, {message: info.stack});
+        Object.assign(info, { message: info.stack });
     }
     return info;
 });
 
-const customFormat = printf(({level, message, /**label = '',*/ timestamp}) => {
+const customFormat = printf(({ level, message, /**label = '',*/ timestamp }) => {
     return `[${timestamp}] ${level}: ${message}`;
 });
 
@@ -27,7 +27,7 @@ const Logger = createLogger({
         new transports.Console({
             stderrLevels: ['error'],
         }),
-    // Optionally, add other transports for file logging, etc.
+        // Optionally, add other transports for file logging, etc.
     ],
 });
 
