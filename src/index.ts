@@ -1,4 +1,4 @@
-import express, { Express, Request, Response , Application } from 'express';
+import express, { Request, Response , Application } from 'express';
 import dotenv from 'dotenv';
 import helmet from 'helmet';
 import cors from 'cors';
@@ -25,9 +25,9 @@ app.use(bodyParser.json());  // Parse JSON request bodies
 app.use(bodyParser.urlencoded({ extended: false }));  // Parse URL-encoded request bodies
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Welcome to Express & TypeScript Server');
+    res.send('Welcome to Express & TypeScript Server');
 });
 
 app.listen(port, () => {
-  console.log(`Server is Fire at http://localhost:${port}`);
+    console.log(`Server is Fire at http://localhost:${port}`);
 });
