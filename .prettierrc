@@ -8,5 +8,5 @@
     "arrowParens": "avoid",
     "requirePragma": false,
     "insertPragma": false,
-    "endOfLine": "crlf"
+    "endOfLine": "lf"
 }
